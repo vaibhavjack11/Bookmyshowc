@@ -8,12 +8,10 @@ import {
   Row, 
   Col, 
   Divider, 
-  Drawer, 
-  Form, 
+  Drawer,
   Button, 
-  Input, 
   Select, 
-  DatePicker  
+  Modal  
   } from "antd";
 import { 
   
@@ -29,6 +27,7 @@ import {
 // Imports from useDefined package
 import Slider from '../View/assets/Packages/Carousal'
 import Banner from '../View/assets/Packages/Banner'
+import CardSlider from '../View/assets/Packages/Card'
 
 
 
@@ -41,6 +40,8 @@ const { Option } = Select;
 function Main(props) {
   //variables
   const [drawer,setDrawer] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
 
   //functions
   const showDrawer = () => {
@@ -55,8 +56,22 @@ function Main(props) {
     );
   };
 
-  //Actual DOM return
+ 
 
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+
+  //Actual DOM return
   return (
     <>
       <Header style={{backgroundColor:"#595959"}}>
@@ -75,21 +90,26 @@ function Main(props) {
               
             </div>
           </Col>
-          <Col span={14}>
+          <Col span={15}>
             <Divider orientation="right">
               <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-                <Menu.Item key={1} style={{backgroundColor:"#595959"}}>City name<CaretDownOutlined /></Menu.Item>
+                <Menu.Item key={1} style={{backgroundColor:"#595959"}} onClick={showModal}>
+                City name
+                <CaretDownOutlined /></Menu.Item>
                 <Menu.Item key={2} style={{backgroundColor:"#2900ff"}}>Sign in</Menu.Item>
               </Menu>
+              <Modal width={1000} title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+
+              </Modal>
             </Divider>
           </Col>
-          <Col span={2}>
+          <Col span={1}>
           <Button type="gray" onClick={showDrawer}>
           <MenuUnfoldOutlined />
         </Button>
         <Drawer
-          title="Create a new account"
-          width={720}
+          title="Hey"
+          width={360}
           onClose={onClose}
           visible={drawer}
           bodyStyle={{ paddingBottom: 80 }}
@@ -108,101 +128,8 @@ function Main(props) {
             </div>
           }
         >
-          <Form layout="vertical" hideRequiredMark>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="name"
-                  label="Name"
-                  rules={[{ required: true, message: 'Please enter user name' }]}
-                >
-                  <Input placeholder="Please enter user name" />
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="url"
-                  label="Url"
-                  rules={[{ required: true, message: 'Please enter url' }]}
-                >
-                  <Input
-                    style={{ width: '100%' }}
-                    addonBefore="http://"
-                    addonAfter=".com"
-                    placeholder="Please enter url"
-                  />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="owner"
-                  label="Owner"
-                  rules={[{ required: true, message: 'Please select an owner' }]}
-                >
-                  <Select placeholder="Please select an owner">
-                    <Option value="xiao">Xiaoxiao Fu</Option>
-                    <Option value="mao">Maomao Zhou</Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="type"
-                  label="Type"
-                  rules={[{ required: true, message: 'Please choose the type' }]}
-                >
-                  <Select placeholder="Please choose the type">
-                    <Option value="private">Private</Option>
-                    <Option value="public">Public</Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="approver"
-                  label="Approver"
-                  rules={[{ required: true, message: 'Please choose the approver' }]}
-                >
-                  <Select placeholder="Please choose the approver">
-                    <Option value="jack">Jack Ma</Option>
-                    <Option value="tom">Tom Liu</Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="dateTime"
-                  label="DateTime"
-                  rules={[{ required: true, message: 'Please choose the dateTime' }]}
-                >
-                  <DatePicker.RangePicker
-                    style={{ width: '100%' }}
-                    getPopupContainer={trigger => trigger.parentElement}
-                  />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={24}>
-                <Form.Item
-                  name="description"
-                  label="Description"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'please enter url description',
-                    },
-                  ]}
-                >
-                  <Input.TextArea rows={4} placeholder="please enter url description" />
-                </Form.Item>
-              </Col>
-            </Row>
-          </Form>
+      
+        <div>write here </div>
         </Drawer>
           </Col>
         </Row>
@@ -268,6 +195,16 @@ function Main(props) {
           </Banner>
 
 
+            </div>
+
+
+            <div
+              className="site-layout-background"
+              style={{ padding: 24, minHeight: 360,backgroundColor:"#5555" }}
+            >
+            <CardSlider>
+
+            </CardSlider>
             </div>
           </Content>
 

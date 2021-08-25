@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel } from 'antd';
+import { Carousel, Col, Row, Card } from 'antd';
 
 const contentStyle = {
   height: '160px',
@@ -15,16 +15,108 @@ return (
   <>
   <Carousel autoplay style={{borderRadius:"5px"}}>
     <div>
-      <h3 style={contentStyle}>1</h3>
+    <div className="site-card-wrapper">
+    <Row gutter={16}>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+    </Row>
+  </div>
     </div>
     <div>
-      <h3 style={contentStyle}>2</h3>
+          <div className="site-card-wrapper">
+    <Row gutter={16}>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+    </Row>
+  </div>
     </div>
     <div>
-      <h3 style={contentStyle}>3</h3>
+          <div className="site-card-wrapper">
+    <Row gutter={16}>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+    </Row>
+  </div>
     </div>
     <div>
-      <h3 style={contentStyle}>4</h3>
+          <div className="site-card-wrapper">
+    <Row gutter={16}>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={6}>
+        <Card hoverable title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+    </Row>
+  </div>
     </div>
   </Carousel>,
   </>
