@@ -5,7 +5,7 @@ import banner from '../images/banner.jpg'
 const contentStyle = {
   textAlign: 'center',
 };
-function Slider(){
+const Banner = () =>{
 
 
 return (
@@ -19,4 +19,4 @@ return (
 );
 }
 
-export default Slider;
+export default Banner;

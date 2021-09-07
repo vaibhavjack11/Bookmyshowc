@@ -5,16 +5,9 @@ import {
 } from "@ant-design/icons";
 
 const { Meta } = Card;
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
-function Slider(){
+const Cards = () =>{
 
-
+let img1 = "//in.bmscdn.com/m6/images/common-modules/regions/mumbai-selected.png"
 return (
   <>
   <Carousel autoplay style={{borderRadius:"5px"}}>
@@ -22,7 +15,7 @@ return (
     <div className="site-card-wrapper">
     <Row gutter={16}>
       <Col span={6}>
-        <Card hoverable    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />} bordered={false}>
+        <Card hoverable    cover={<img alt="example" src={img1} />} bordered={false}>
               <Meta title="Liked by" description="Movie Name" avatar={<HeartFilled />}/>
         </Card>
       </Col>
@@ -127,4 +120,4 @@ return (
 );
 }
 
-export default Slider;
+export default Cards;

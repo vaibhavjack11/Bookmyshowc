@@ -27,14 +27,27 @@ import Slider from "../View/assets/Packages/Carousal";
 import Banner from "../View/assets/Packages/Banner";
 import CardSlider from "../View/assets/Packages/Card";
 import CitySelect from "../View/assets/Packages/CitySelect";
+import SignIn from "../View/assets/Packages/SignIn"
+import Store from "../Store/store"
 
 //package assignments
 const { Header, Content, Footer } = Layout;
 const { Option } = Select;
 
 //Start of function
+console.log(Store.getState());
+const Main = (props) => {
 
-function Main(props) {
+// Store.dispatch({
+//   type:"dataAdded",
+//   payload:{
+//     discription:"first bug"
+//   }
+
+// })
+
+
+
   //variables
   const [drawer, setDrawer] = useState(false);
 
@@ -66,12 +79,12 @@ const listData = [
         <Row align="middle">
           <Col span={3}>
             <Divider orientation="right">
-              <div className="logo" style={{ color: "white" }}>
+              <div className="logo">
                 BookmyShow
               </div>
             </Divider>
           </Col>
-          <Col span={10}>
+          <Col span={8}>
             <Input
               size="large"
               placeholder="Search for Movies, Events, Plays, Sports and Activities"
@@ -86,23 +99,21 @@ const listData = [
                   <CitySelect></CitySelect>
                 </Menu.Item>
                 <Menu.Item key={2} style={{ backgroundColor: "#2900ff" }}>
-                  <div
-                    style={{ backgroundColor: "#2900ff", borderRadius: "10px" }}
-                  >
-                    {" "}
-                    Sign in
-                  </div>
+                  
+                  
+                  <SignIn></SignIn>
+                  
                 </Menu.Item>
               </Menu>
             </Divider>
           </Col>
-          <Col span={1}>
+          <Col span={1} offset={2}>
             <Button type="gray" onClick={showDrawer}>
               <MenuUnfoldOutlined />
             </Button>
             <Drawer
               title="Hey"
-              width={360}
+              width={200}
               onClose={onClose}
               visible={drawer}
               bodyStyle={{ paddingBottom: 80 }}
@@ -203,7 +214,7 @@ const listData = [
 
 
 
-        
+
           <Content style={{ margin: "0 0px" }}>
             <div
               className="site-layout-background"
@@ -257,11 +268,11 @@ const listData = [
                   great experience? Partner with us & get listed on BookMyShow
                 </h3>
               </Col>
-              <Col span={3} offset={3}>
-                <Button type="primary" danger>
+              <Col span={2} offset={3}>
+                <a type="primary" danger>
                   {" "}
                   Contact Today!
-                </Button>
+                </a>
               </Col>
             </Row>
           </Footer>

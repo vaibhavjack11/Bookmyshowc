@@ -1,0 +1,61 @@
+.large-city {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.small-city {
+  max-width: 39px;
+  max-height: 39px;
+}
+
+.view-all-cities {
+  width: 100%;
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 15px 15px 0px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.list-values {
+  height: 20px;
+  margin: 0px 10px;
+  display: inline-block;
+  min-width: calc(20% - 20px);
+}
+
+.list-text {
+  color: #999999;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 18px;
+  text-decoration: none;
+  max-width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-orange {
+  color: #ff3000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.text-dark {
+  color: #000000;
+  font-weight: bold;
+  cursor: help;
+}
+/*# sourceMappingURL=citySelect.css.map */

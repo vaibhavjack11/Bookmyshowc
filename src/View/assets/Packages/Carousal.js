@@ -1,34 +1,47 @@
 import React from 'react'
 import { Carousel } from 'antd';
-
+import '../css/carousal.css';
+import image1 from '../images/image1.jpg'
+import image2 from '../images/image2.jpg'
+import image3 from '../images/image3.jpg'
+import image4 from '../images/image4.jpg'
 const contentStyle = {
-  height: '160px',
+  maxHeight: '160px',
+  maxWidth:"1300px",
   color: '#fff',
   lineHeight: '160px',
-  textAlign: 'center',
   background: '#364d79',
+  display: 'flex',
+  justifyContent:'center'
+  
 };
-function Slider(){
 
 
+let img1 = image1;
+let img2 = image2;
+let img3 = image3;
+let img4 = image4;
+const Carousals = () =>{
 return (
   <>
-  <Carousel autoplay style={{borderRadius:"5px"}}>
-    <div>
-      <h3 style={contentStyle}>1</h3>
+  <Carousel autoplay>
+    <div style={contentStyle}>
+      <div >
+      <img src={img1} className="image-carousal" />
+      </div>
     </div>
     <div>
-      <h3 style={contentStyle}>2</h3>
+      <img src={img2} className="image-carousal"/>
     </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
+    <div >
+      <img src={img3} className="image-carousal"/>
     </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
+    <div >
+      <img src={img4} className="image-carousal"/>
     </div>
   </Carousel>,
   </>
 );
 }
 
-export default Slider;
+export default Carousals; 
